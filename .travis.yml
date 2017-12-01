@@ -7,9 +7,6 @@ addons:
 
 language: scala
 
-scala:
-  - 2.10.7
-
 jdk:
   - oraclejdk8
   - oraclejdk9
@@ -19,15 +16,5 @@ before_cache:
   - find $HOME/.ivy2 -name 'ivydata-*.properties' -delete
 
 script:
-  - sbt +test
-
-before_deploy:
-
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: sbt "release with-defaults"
-  on:
-    condition: -e ./deploy.sbt
-    all_branches: true
-    jdk: oraclejdk8
+  - sbt test
+  - sbt scripted
