@@ -11,6 +11,7 @@ licenses := Seq("Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0")
 
 libraryDependencies ++= Seq(
   "com.thoughtworks.extractor" %% "extractor" % "2.1.0",
+  "org.apache.commons" % "commons-lang3" % "3.7",
   "org.scalatest" %% "scalatest" % "3.0.4" % "test"
 )
 
